@@ -15,29 +15,29 @@ class Place(models.Model):
     def delete_place(self):
         self.delete()
 
-class Category(models.Model):
-    category = models.CharField(max_length = 30)
+# class Category(models.Model):
+#     category = models.CharField(max_length = 30)
 
 
 
-    def __str__(self):
-        return self.category
+#     def __str__(self):
+#         return self.category
 
 
-class Image(models.Model):
-    image_name = models.CharField(max_length= 30)
-    image_description = models.CharField(max_length = 30)
-    image = models.ImageField(upload_to = 'gallery/', default = "")
-    image_location = models.ForeignKey(
-        Place,
-        on_delete=models.DO_NOTHING)
-    image_category = models.ForeignKey(
-        Category,
-        on_delete = models.DO_NOTHING)
+# class Image(models.Model):
+#     image_name = models.CharField(max_length= 30)
+#     image_description = models.CharField(max_length = 30)
+#     image = models.ImageField(upload_to = 'gallery/', default = "")
+#     image_location = models.ForeignKey(
+#         Place,
+#         on_delete=models.DO_NOTHING)
+#     image_category = models.ForeignKey(
+#         Category,
+#         on_delete = models.DO_NOTHING)
 
-    post_date = models.DateTimeField(auto_now_add=True)
+#     post_date = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.image_name
+#     def __str__(self):
+#         return self.image_name
 
 # Create your models here.
