@@ -4,10 +4,10 @@ from datetime import datetime as dt
 
 
 class Place(models.Model):
-    location = models.CharField(max_length = 30)
+    place = models.CharField(max_length = 30)
 
     def __str__(self):
-        return self.location
+        return self.place
 
     def save_place(self):
         self.save()
@@ -24,20 +24,33 @@ class Category(models.Model):
         return self.category
 
 
-class Image(models.Model):
-    image_name = models.CharField(max_length= 30)
-    image_description = models.CharField(max_length = 30)
-    image = models.ImageField(upload_to = 'gallery/', default = "")
-    image_location = models.ForeignKey(
-        Place,
-        on_delete=models.DO_NOTHING)
-    image_category = models.ForeignKey(
-        Category,
-        on_delete = models.DO_NOTHING)
+class Picture(models.Model):
+    picture = models.ImageField(upload_to='picture/',null=True)
+    name = models.CharField(max_length=60)
+    details = models.TextField()
+    category = models.ForeignKey(Category)
+    place = models.ForeignKey(Place)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
-    post_date = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return self.image_name
+    # def __str__(self):
+    #     return self.picture
 
-# Create your models here.
+    def save_picture(self):
+        self.save()
+
+    @classmethod
+    def todays_picture(cls):
+        today = dt.date.today()
+        picture = cls.objects.filter(pub_date__date = today)
+        return picture
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        picture = cls.objects.filter(category__icontains=search_term)
+        return picture
+
+    @classmethod
+    def pics(cls):
+        pictures = cls.objects.all()
+        return pictures    
