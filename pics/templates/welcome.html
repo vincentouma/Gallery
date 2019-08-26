@@ -26,6 +26,8 @@
         <div class="row">
             <div class="col-md-12 search-form">
                 <form class="form-inline" role="search" action="{% url 'search_results' %}">
+                        <span><p>Welcome to Obindi's Gallery and Enjoy my  hiking adventure and Intirior design </p></span>
+
                     <input class="form-control search-input" name="picture" type="search" placeholder="Search categories" aria-label="Search">
                 </form>
             </div>
@@ -33,7 +35,8 @@
     </div>
     <hr>
 
-    {% block content %} <h1 class='text-center'>Images {{date|date:"l d-F Y"}}</h1> {%endblock%}
+    {% block content %}#
+     <h1 class='text-center'>Images {{date|date:"l d-F Y"}}</h1> {%endblock%}
 
     {% block scripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
