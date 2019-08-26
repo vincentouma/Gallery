@@ -1,5 +1,5 @@
-# [Viewer](https://mygalla.herokuapp.com/)
-###Obindi's Gallery
+# Obindi's Gallery
+
 
 #### author
 # Vincent Ouma
