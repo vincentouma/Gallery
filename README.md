@@ -18,8 +18,7 @@
 
 ### Clone the Repo
 Run the following command on the terminal:
-`git clone https://github.com/Nicholas-muchiri/Viewer.git && cd Viewer`
-
+https://github.com/vincentouma/Gallery
 ### Activate virtual environment
 Activate virtual environment using python3.6 as its default handler
 ```bash
